@@ -8,6 +8,8 @@ namespace Advent2020
 {
 	public class Day2
 	{
+		const string _inputFilename = @"Inputs\Day2.txt";
+
 		[Test]
 		public void SilverTest()
 		{
@@ -19,7 +21,9 @@ namespace Advent2020
 		[Test]
 		public void Silver()
 		{
-			var total = FileHelpers.EnumerateLines("Inputs\\Day2.txt").Count(IsSilverValid);
+			FileHelpers.CheckInputs(_inputFilename);
+
+			var total = FileHelpers.EnumerateLines(_inputFilename).Count(IsSilverValid);
 			Assert.AreEqual(582, total);
 		}
 
@@ -42,10 +46,10 @@ namespace Advent2020
 		[Test]
 		public void Gold()
 		{
-			var sw = Stopwatch.StartNew();
-			var total = FileHelpers.EnumerateLines("Inputs\\Day2.txt").Count(IsGoldValid);
+			FileHelpers.CheckInputs(_inputFilename);
+
+			var total = FileHelpers.EnumerateLines(_inputFilename).Count(IsGoldValid);
 			Assert.AreEqual(729, total);
-			Console.WriteLine(sw.ElapsedMilliseconds);
 		}
 
 		static bool IsGoldValid(string line)

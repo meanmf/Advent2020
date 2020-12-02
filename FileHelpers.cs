@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using NUnit.Framework;
 
 namespace Advent2020
 {
@@ -32,6 +33,14 @@ namespace Advent2020
 				if (line == null) yield break;
 
 				yield return line;
+			}
+		}
+
+		public static void CheckInputs(string filename)
+		{
+			if (!File.Exists(filename))
+			{
+				Assert.Inconclusive("Inputs not available");
 			}
 		}
 	}

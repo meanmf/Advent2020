@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using NUnit.Framework;
 
@@ -7,6 +8,8 @@ namespace Advent2020
 {
 	public class Day1
 	{
+		const string _inputFilename = @"Inputs\Day1.txt";
+
 		[Test]
 		public void SilverTest()
 		{
@@ -17,7 +20,9 @@ namespace Advent2020
 		[Test]
 		public void Silver()
 		{
-			var entries = FileHelpers.EnumerateLines("Inputs\\Day1.txt").Select(int.Parse).ToHashSet();
+			FileHelpers.CheckInputs(_inputFilename);
+
+			var entries = FileHelpers.EnumerateLines(_inputFilename).Select(int.Parse).ToHashSet();
 			Assert.AreEqual(1_010_299, Find2(entries));
 		}
 
@@ -44,7 +49,9 @@ namespace Advent2020
 		[Test]
 		public void Gold()
 		{
-			var entries = FileHelpers.EnumerateLines("Inputs\\Day1.txt").Select(int.Parse).ToArray();
+			FileHelpers.CheckInputs(_inputFilename);
+
+			var entries = FileHelpers.EnumerateLines(_inputFilename).Select(int.Parse).ToArray();
 			var total = Find3(entries);
 
 			Assert.AreEqual(42_140_160, total);
