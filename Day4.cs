@@ -18,7 +18,7 @@ namespace Advent2020
 		const string _passportId = "pid";
 
 		const string _hairColorChars = "0123456789abcdef";
-		readonly string[] _eyeColors = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"};
+		static readonly string[] _eyeColors = {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"};
 
 		#region Example Input
 		const string _silver = @"ecl:gry pid:860033327 eyr:2020 hcl:#fffffd
@@ -137,7 +137,7 @@ iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719";
 			       passport.ContainsKey(_passportId);
 		}
 
-		bool ValidateGold(IReadOnlyDictionary<string, string> passport)
+		static bool ValidateGold(IReadOnlyDictionary<string, string> passport)
 		{
 			if (!ValidateSilver(passport)) return false;
 
