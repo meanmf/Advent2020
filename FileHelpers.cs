@@ -11,14 +11,18 @@ namespace Advent2020
 			using var inputFile = new StreamReader(File.OpenRead(filename));
 			while (!inputFile.EndOfStream)
 			{
-				yield return inputFile.ReadLine();
+				var line = inputFile.ReadLine();
+				if (line == null) break;
+				yield return line;
 			}
 		}
 
 		public static string GetSingle(string filename)
 		{
 			using var inputFile = new StreamReader(File.OpenRead(filename));
-			return inputFile.ReadLine();
+			var line = inputFile.ReadLine();
+			if (line == null) return string.Empty;
+			return line;
 		}
 
 		public static IEnumerable<string> ReadAllLinesFromString(string input)
