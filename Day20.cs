@@ -160,6 +160,8 @@ Tile 3079:
 		[Test]
 		public void Gold()
 		{
+			FileHelpers.CheckInputs(_inputFilename);
+			
 			const int size = 12;
 			var result = FindGold(size, FileHelpers.EnumerateLines(_inputFilename));
 			Assert.AreEqual(2424, result);
