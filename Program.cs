@@ -6,7 +6,7 @@ namespace Advent2020
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			new Day23().GoldTest();
 		}
 	}
 }
