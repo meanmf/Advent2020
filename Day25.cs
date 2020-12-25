@@ -22,6 +22,7 @@ namespace Advent2020
 		[Test]
 		public void Silver()
 		{
+			FileHelpers.CheckInputs(_inputFilename);
 			Assert.AreEqual(19774660, Run(FileHelpers.EnumerateLines(_inputFilename)));
 		}
 
